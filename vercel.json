@@ -1,7 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/app", "destination": "https://fussless.lovable.app" },
-    { "source": "/app/", "destination": "https://fussless.lovable.app" },
-    { "source": "/app/:path*", "destination": "https://fussless.lovable.app/:path*" }
+  "redirects": [
+    { "source": "/app", "destination": "https://fussless.lovable.app", "permanent": false },
+    { "source": "/app/:path*", "destination": "https://fussless.lovable.app/:path*", "permanent": false }
   ]
 }
