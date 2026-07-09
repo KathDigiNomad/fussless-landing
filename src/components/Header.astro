@@ -1,0 +1,27 @@
+---
+import { config } from '@/config';
+---
+
+<header class="container-x flex items-center justify-between py-6">
+  <a href="/" class="font-display text-2xl font-bold text-ink no-underline">
+    {config.name}
+  </a>
+  <nav aria-label="Primary">
+    <ul class="flex items-center gap-6 list-none m-0 p-0">
+      <li class="hidden sm:block">
+        <a href="#features" class="text-ink-soft no-underline hover:text-ink">Features</a>
+      </li>
+      <li class="hidden sm:block">
+        <a href="#faq" class="text-ink-soft no-underline hover:text-ink">FAQ</a>
+      </li>
+      <li>
+        <a
+          href={config.hero.primaryCta.href}
+          class="inline-block bg-brand-dark text-cream no-underline px-5 py-2.5 rounded-full font-medium hover:bg-ink transition-colors"
+        >
+          Open app
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Hero from '@/components/Hero.astro';
+import Features from '@/components/Features.astro';
+import HowItWorks from '@/components/HowItWorks.astro';
+import Testimonials from '@/components/Testimonials.astro';
+import Faq from '@/components/Faq.astro';
+import FinalCta from '@/components/FinalCta.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<BaseLayout>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Features />
+    <HowItWorks />
+    <Testimonials />
+    <Faq />
+    <FinalCta />
+  </main>
+  <Footer />
+</BaseLayout>

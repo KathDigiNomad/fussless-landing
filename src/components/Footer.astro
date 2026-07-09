@@ -1,0 +1,23 @@
+---
+import { config } from '@/config';
+const year = new Date().getFullYear();
+---
+
+<footer class="container-x py-12 border-t border-ink/10">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+    <div>
+      <p class="font-display text-xl font-bold text-ink">{config.name}</p>
+      <p class="text-sm text-ink-soft mt-1">{config.tagline}</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="flex flex-wrap gap-x-6 gap-y-2 list-none m-0 p-0 text-sm">
+        <li><a href="/privacy" class="text-ink-soft no-underline hover:text-ink">Privacy</a></li>
+        <li><a href="/terms" class="text-ink-soft no-underline hover:text-ink">Terms</a></li>
+        <li><a href={`mailto:${config.supportEmail}`} class="text-ink-soft no-underline hover:text-ink">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="text-xs text-ink-soft mt-8">
+    &copy; {year} {config.name}. Made with care in Belgium.
+  </p>
+</footer>

@@ -1,0 +1,23 @@
+---
+import { config } from '@/config';
+const { finalCta } = config;
+---
+
+<section class="section-y bg-brand-dark text-cream">
+  <div class="container-x text-center max-w-3xl">
+    <h2 class="font-display text-4xl md:text-5xl font-bold text-cream mb-4">
+      {finalCta.headline}
+    </h2>
+    {finalCta.body && (
+      <p class="text-lg text-cream/85 mb-8">
+        {finalCta.body}
+      </p>
+    )}
+    <a
+      href={finalCta.button.href}
+      class="inline-block bg-cream text-ink no-underline px-8 py-4 rounded-full font-medium text-base hover:bg-white transition-colors"
+    >
+      {finalCta.button.label}
+    </a>
+  </div>
+</section>

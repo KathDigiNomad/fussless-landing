@@ -1,0 +1,27 @@
+---
+import { config } from '@/config';
+const testimonials = config.testimonials;
+---
+
+{testimonials && testimonials.length > 0 && (
+  <section class="section-y bg-surface">
+    <div class="container-x">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-ink mb-12 text-center">
+        What families say
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+        {testimonials.map((t) => (
+          <figure class="bg-cream p-8 rounded-2xl">
+            <blockquote class="font-display text-xl md:text-2xl text-ink leading-snug m-0">
+              &ldquo;{t.quote}&rdquo;
+            </blockquote>
+            <figcaption class="mt-6 text-ink-soft">
+              <strong class="text-ink">{t.name}</strong>
+              {t.role && <span> — {t.role}</span>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

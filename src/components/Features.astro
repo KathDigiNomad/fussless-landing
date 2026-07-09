@@ -1,0 +1,26 @@
+---
+import { config } from '@/config';
+---
+
+<section id="features" class="section-y bg-surface">
+  <div class="container-x">
+    <h2 class="font-display text-4xl md:text-5xl font-bold text-ink mb-4 text-center">
+      What makes {config.name} different
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-12">
+      {config.features.map((feature) => (
+        <div>
+          {feature.icon && (
+            <div class="text-4xl mb-4" aria-hidden="true">{feature.icon}</div>
+          )}
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">
+            {feature.title}
+          </h3>
+          <p class="text-ink-soft leading-relaxed">
+            {feature.body}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

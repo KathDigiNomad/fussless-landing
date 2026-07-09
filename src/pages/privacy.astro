@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { config } from '@/config';
+---
+
+<BaseLayout title={`Privacy — ${config.name}`} description={`Privacy policy for ${config.name}.`}>
+  <Header />
+  <main id="main" class="container-x max-w-prose py-16">
+    <h1 class="font-display text-4xl font-bold text-ink mb-6">Privacy policy</h1>
+    <p class="text-ink-soft mb-4">Last updated: 9 July 2026</p>
+    <p class="text-ink-soft mb-4">
+      This is a placeholder privacy policy. Replace with your actual policy before going live.
+      Include: what data you collect, why, how long you store it, third parties (Supabase,
+      Stripe, PostHog, etc.), user rights under GDPR, and how to contact you.
+    </p>
+    <p class="text-ink-soft">
+      Questions? Email <a href={`mailto:${config.supportEmail}`}>{config.supportEmail}</a>.
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import { config } from '@/config';
+const { hero } = config;
+---
+
+<section class="container-x pt-8 pb-16 md:pt-16 md:pb-24">
+  <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div>
+      {hero.eyebrow && (
+        <p class="text-brand-dark text-sm font-medium uppercase tracking-wider mb-4">
+          {hero.eyebrow}
+        </p>
+      )}
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-ink mb-6">
+        {hero.headline}
+      </h1>
+      <p class="text-lg md:text-xl text-ink-soft max-w-prose mb-8">
+        {hero.subheadline}
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href={hero.primaryCta.href}
+          class="inline-block bg-brand-dark text-cream no-underline px-7 py-3.5 rounded-full font-medium text-base hover:bg-ink transition-colors"
+        >
+          {hero.primaryCta.label}
+        </a>
+        {hero.secondaryCta && (
+          <a
+            href={hero.secondaryCta.href}
+            class="inline-block bg-surface text-ink no-underline px-7 py-3.5 rounded-full font-medium text-base border border-ink/15 hover:border-ink/40 transition-colors"
+          >
+            {hero.secondaryCta.label}
+          </a>
+        )}
+      </div>
+      {config.trust?.line && (
+        <p class="mt-8 text-sm text-ink-soft">{config.trust.line}</p>
+      )}
+    </div>
+    <div>
+      <img
+        src={hero.heroImage}
+        alt={hero.heroImageAlt}
+        width="600"
+        height="600"
+        fetchpriority="high"
+        decoding="async"
+        class="w-full h-auto rounded-2xl shadow-xl"
+      />
+    </div>
+  </div>
+</section>
