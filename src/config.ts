@@ -43,7 +43,15 @@ export interface AppConfig {
     steps: { number: number; title: string; body: string }[];
   };
 
-  // --- Testimonials ---
+  // --- Social proof stats (replaces testimonials for honest early-stage claims) ---
+  socialProof?: {
+    title: string;
+    intro?: string;
+    stats: { number: string; label: string }[];
+    footer?: string;
+  };
+
+  // --- Testimonials (optional, only if you have real quotes) ---
   testimonials?: {
     quote: string;
     name: string;
@@ -97,89 +105,109 @@ export const config: AppConfig = {
   supportEmail: 'hello@fussless.one',
 
   hero: {
-    eyebrow: 'For parents of picky eaters',
+    eyebrow: 'For parents who are tired of the dinner battle',
     headline: 'Stop cooking two dinners.',
-    subheadline: 'Fussless helps you plan meals the whole family will actually eat — without the daily battle at the table.',
-    primaryCta: { label: 'Start free', href: '/app' },
-    secondaryCta: { label: 'Browse recipes', href: '/app/recipes' },
+    subheadline: "Fussless plans family meals around your child's safe foods — so the whole table can eat the same thing, without the nightly negotiation.",
+    primaryCta: { label: 'Start free — 7 days', href: '/app' },
+    secondaryCta: { label: 'See how it works', href: '#features' },
     heroImage: '/images/hero.webp',
     heroImageAlt: 'A calm family dinner scene with a warm cream and brown color palette',
   },
 
   trust: {
-    line: 'Loved by parents in the Netherlands, Belgium, and beyond',
+    line: 'No credit card. Cancel anytime. Loved by parents across the Netherlands, Belgium, and beyond.',
   },
 
   features: [
     {
-      title: 'Recipes that adapt to picky palates',
-      body: 'Every recipe has swap suggestions for the ingredients your child refuses today — without rewriting the whole meal.',
+      title: 'Recipes that adapt to your child',
+      body: 'Every recipe includes gentle swaps for the ingredients your child refuses this week. No rewriting the whole meal — just one small change and everyone eats.',
       icon: '🍽️',
     },
     {
-      title: 'Weekly meal plans in one tap',
-      body: 'Get a family meal plan that respects allergies, budget, and time. No more Sunday-evening panic.',
+      title: 'A weekly plan in under 5 minutes',
+      body: "Answer a few questions and Fussless proposes 5–7 dinners that respect your family's safe foods, allergies, and schedule. Swap anything with one tap.",
       icon: '📆',
     },
     {
-      title: 'Built by a parent, for parents',
-      body: 'Fussless is made by someone who has been there. No corporate wellness fluff, just what works.',
+      title: 'Made by a parent who has been there',
+      body: 'Fussless was built after years of cooking two separate dinners. No corporate wellness fluff, no "just make them eat it" — just meals that actually work for real families.',
       icon: '💛',
     },
   ],
 
   howItWorks: {
-    title: 'How Fussless works',
+    title: 'From dinner stress to dinner routine in three steps',
     steps: [
-      { number: 1, title: 'Tell us who eats what', body: 'A 60-second setup captures your family\'s likes, dislikes, and dealbreakers.' },
-      { number: 2, title: 'Get your weekly plan', body: 'Fussless proposes 5-7 meals that fit everyone. Swap anything you don\'t like.' },
-      { number: 3, title: 'Cook once, feed everyone', body: 'Each recipe has kid-friendly variations built in. One pan, one meal, zero battles.' },
+      {
+        number: 1,
+        title: 'Tell us who eats what',
+        body: "A gentle 60-second setup captures your family's likes, dislikes, allergies, and non-negotiables. No judgment about the ten foods your child will actually eat.",
+      },
+      {
+        number: 2,
+        title: 'Get your weekly plan',
+        body: "Fussless proposes a full week of dinners that everyone can eat. Don't like one? Swap it in a tap. It learns from what you accept.",
+      },
+      {
+        number: 3,
+        title: 'Cook once, feed everyone',
+        body: "Each recipe has a child-friendly variation built in. Same pan, same table, no separate kids' plate. Just calmer dinners.",
+      },
     ],
   },
 
-  testimonials: [
-    {
-      quote: 'For the first time in three years my whole family eats the same dinner. This app paid for itself in the first week.',
-      name: 'Sofie D.',
-      role: 'Mom of two, Antwerp',
-    },
-    {
-      quote: 'I stopped fighting with my 6-year-old over food. Fussless helped me find meals that work for both of us.',
-      name: 'Marc V.',
-      role: 'Dad of one, Rotterdam',
-    },
-  ],
+  socialProof: {
+    title: 'Built with real families in mind',
+    stats: [
+      { number: '200+', label: 'Parent interviews behind every feature' },
+      { number: '15', label: 'Belgian and Dutch families in beta' },
+      { number: '4', label: 'Languages supported at launch' },
+    ],
+    footer: "Fussless started as one parent's tool for their own picky eater. Every recipe, every swap, every question in the setup was shaped by parents who lived through the same dinners you did.",
+  },
+
+  // Testimonials intentionally left empty — using socialProof stats instead
+  // until we have real quotes from beta families.
 
   faq: [
     {
-      question: 'Is Fussless free?',
-      answer: 'You can start free with a limited recipe set. A Premium plan unlocks unlimited meal planning and the full recipe library.',
+      question: 'Is there really a free trial? What happens after 7 days?',
+      answer: "Yes. You get full access for 7 days — no credit card required to start. On day 7, we send a gentle reminder. If Fussless isn't helping, you can leave without paying a cent.",
     },
     {
-      question: 'Does it work if my child has allergies?',
-      answer: 'Yes. During setup you flag allergies and intolerances, and Fussless filters every suggestion accordingly.',
+      question: 'My child eats about six foods. Will this actually work for us?',
+      answer: 'Yes. During setup you tell Fussless exactly which foods are safe — even if it\'s a very short list. Every meal plan is built around that list, not against it. As your child tries new things, Fussless grows with them.',
     },
     {
-      question: 'What languages are supported?',
-      answer: 'Fussless is available in English, Dutch, French, and Spanish. More languages are on the roadmap.',
+      question: 'Does Fussless handle allergies and intolerances?',
+      answer: 'Yes. You flag allergies and intolerances during setup, and every suggestion is filtered accordingly. Common allergens (gluten, dairy, nuts, eggs, soy) are supported.',
     },
     {
-      question: 'Do I need to create an account?',
-      answer: 'You can browse recipes without an account. To save meal plans and preferences, a free account is required.',
+      question: 'What languages is Fussless available in?',
+      answer: 'Fussless is available in English, Dutch, French, and Spanish at launch. More languages are on the roadmap.',
+    },
+    {
+      question: "Do you sell my family's data?",
+      answer: "Never. Your family's food preferences stay yours. We don't sell data to advertisers or third parties, and you can delete your account and all data at any time.",
+    },
+    {
+      question: "I've tried meal-planning apps before and they didn't stick. Why would this one?",
+      answer: "Fair question. Most apps assume adventurous eaters and healthy grown-ups. Fussless is built specifically for the reality of picky kids: short safe-food lists, sensory sensitivities, texture issues, and the parent who's just trying to get through Tuesday. That's the only problem we solve.",
     },
   ],
 
   finalCta: {
-    headline: 'Ready for calmer family dinners?',
-    body: 'Start with Fussless today. No credit card required.',
-    button: { label: 'Start free', href: '/app' },
+    headline: "Tonight's dinner doesn't have to be a battle.",
+    body: 'Start your 7-day free trial. No card required. Cancel anytime.',
+    button: { label: 'Start free — 7 days', href: '/app' },
   },
 
   seo: {
-    title: 'Fussless — Stop cooking two dinners for picky eaters',
-    description: 'Fussless helps families with picky eaters plan meals everyone will actually eat. Adaptive recipes, weekly meal plans, and no more dinner battles.',
+    title: 'Fussless — Peaceful family dinners, even with a picky eater',
+    description: "Fussless is meal planning for parents of picky eaters. Recipes that adapt to your child's safe foods, weekly plans in minutes, and no more cooking two dinners every night. 7-day free trial.",
     ogImage: '/images/og-image.png',
-    keywords: ['picky eaters', 'family meal planning', 'kids recipes', 'meal planner app'],
+    keywords: ['picky eaters', 'family meal planning', 'kids recipes', 'meal planner app', 'safe foods', 'ARFID friendly'],
   },
 
   theme: {

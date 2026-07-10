@@ -1,0 +1,36 @@
+---
+import { config } from '@/config';
+const socialProof = config.socialProof;
+---
+
+{socialProof && (
+  <section class="section-y bg-surface">
+    <div class="container-x max-w-5xl">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-ink mb-4 text-center">
+        {socialProof.title}
+      </h2>
+      {socialProof.intro && (
+        <p class="text-lg text-ink-soft text-center max-w-2xl mx-auto mb-12">
+          {socialProof.intro}
+        </p>
+      )}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-12">
+        {socialProof.stats.map((stat) => (
+          <div class="text-center">
+            <div class="font-display text-6xl md:text-7xl font-bold text-brand-dark leading-none mb-3">
+              {stat.number}
+            </div>
+            <p class="text-ink-soft leading-relaxed">
+              {stat.label}
+            </p>
+          </div>
+        ))}
+      </div>
+      {socialProof.footer && (
+        <p class="text-ink-soft leading-relaxed text-center max-w-2xl mx-auto mt-12">
+          {socialProof.footer}
+        </p>
+      )}
+    </div>
+  </section>
+)}
