@@ -56,23 +56,22 @@ const absoluteOgImage = new URL(ogImage, Astro.site).href;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Preconnect to Google Fonts for faster font loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Fonts loaded async to avoid render-blocking. -->
+    <!-- Self-hosted fonts — no external DNS/TLS, no render-blocking third-party CSS -->
     <link
       rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-      onload="this.onload=null;this.rel='stylesheet'"
+      as="font"
+      type="font/woff2"
+      href="/fonts/inter-latin.woff2"
+      crossorigin
     />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-      />
-    </noscript>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/playfair-latin.woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
 
     <!-- Preload the LCP hero image so it starts loading immediately. -->
     <!-- Prefer AVIF; imagesrcset/imagesizes ensure the correct responsive variant preloads. -->
