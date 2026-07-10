@@ -205,7 +205,7 @@ export const config: AppConfig = {
 
   seo: {
     title: 'Fussless — Peaceful family dinners, even with a picky eater',
-    description: "Fussless is meal planning for parents of picky eaters. Recipes that adapt to your child's safe foods, weekly plans in minutes, and no more cooking two dinners every night. 7-day free trial.",
+    description: "Meal planning for families with picky eaters. Recipes that adapt to your kid's safe foods. 7-day free trial.",
     ogImage: '/images/og-image.png',
     keywords: ['picky eaters', 'family meal planning', 'kids recipes', 'meal planner app', 'safe foods', 'ARFID friendly'],
   },
